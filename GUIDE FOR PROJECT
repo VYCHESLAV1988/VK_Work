@@ -1,0 +1,92 @@
+==========================================================================================================================================
+Create to project New Repository: == https://github.com/
+Repository name* ==>
+Public / Private ==>
+Initialize this repository with: Add a README file ==>
+Add .gitignore: Gridle ==>
+Choose a license: Apache License 2.0 / other
+
+==========================================================================================================================================
+GitHub Desktop:
+File ==> Clone Repository ==> Name project ==> Local path (D:\QA_30_AUTO\VK_Work)
+==========================================================================================================================================
+
+IntelliJ IDEA Community Edition:
+Crate new project: Main menu ==> File ==> New ==> Project
+Chose to JAVA: ==> Name:VK_Work ==> Location: D:\QA_30_AUTO ==> Create Git repository (check box on) ==>
+Build system: GRADLE  ==> JDK: 11 java version "11.0.21" / 15 java ==> Gradle DSL:GROOVY ==> Create
+
+
+Setting for start: Chose build.gridle == and change to text
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.16.1'
+    implementation group: 'org.testng', name: 'testng', version: '7.5.1'
+}
+
+test {
+    useTestNG()
+}
+
+Gridle update: Click in Load Gridle Changes (Hotkey:Ctrl+Shift+O) == click elephant
+==========================================================================================================================================
+
+1. Create to Design Pattern (folder and class):
+==> scr/main/java ==> Create to new Package: ==> New ==> Package ==> manager (Package name only small letters!!!)
+manager: Create to 3 Java Class (ApplicationManager/HelperBase/HelperUser)
+manager ==> New ==> Java Class ==> ApplicationManager ==> Enter
+
+ApplicationManager: Create to (Driver/method init / method stop)
+
+========================================= Method ApplicationManager ==============================================
+public class ApplicationManager {
+    //Create to driver
+    WebDriver wd;
+
+    public void init(){
+        //WebDriver and open URL
+        wd = new ChromeDriver();
+        wd.navigate().to("Url"); //save to history browser and open URL
+
+    }
+
+    public void stop(){
+    //closed full opened tabs
+     wd.quit
+    }
+
+}
+
+==========================================Method HelperBase==================================================
+
+manager ==> New ==> Java Class ==> HelperBase ==> Enter
+
+
+public class HelperBase {
+//Create to Webdriver
+WebDriver wd;
+//Create to Constructor: Click right mice button chose to Generate ==> Constructor ==> wd:WebDriver
+
+
+}
+
+==========================================HelperUser====================================================================
+
+manager ==> New ==> Java Class ==> HelperUser ==> Enter
+//HelperUser extends HelperBase
+
+public class HelperUser extends HelperBase  {
+//Create to Constructor matching super: Chose to text and click to Constructor matching super!!
+
+public class HelperUser extends HelperBase  {
+    public HelperUser(WebDriver wd) {
+        super(wd);
+    }
+
+}
+==============================================02;08==========================================================================
+
+Tests: ==> scr/test/java ==> Create to new Package: ==> New ==> Package ==> tests (Package name only small letters!!!)
+tests: Create to 2 Java Class (TestBase/LoginTests/)
+tests: ==> New ==> Java Class ==> TestsBase ==> Enter
+tests: ==> New ==> Java Class ==> LoginTests ==> Enter
